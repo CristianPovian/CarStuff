@@ -26,6 +26,8 @@ public class CarService {
         return repository.findById(id);
     }
 
+//    public List<Car> getSpecCar(String car) { return repository.getAllCars(); }
+
     public Car createCar(Car car){
         Date date = new Date();
         car.setCreatedDate(date);
@@ -40,4 +42,9 @@ public class CarService {
         repository.updateCar(id,toUpdate);
         return repository.findById(id);
     }
+
+    public void delCarById(String id){
+        repository.deleteCarById(id);
+    }
+
 }

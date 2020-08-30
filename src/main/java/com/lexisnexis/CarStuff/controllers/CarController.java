@@ -30,6 +30,12 @@ public class CarController {
         return ResponseEntity.ok(carList);
     }
 
+//    @GetMapping("cars/{id}")
+//    public ResponseEntity<List<Car>> getSpecificCars(@PathVariable String car){
+//        List<Car> carList = carService.getSpecCar(car);
+//        return  ResponseEntity.ok(carList);
+//    }
+
     @GetMapping("/cars/{id}")
     public Car getCarById(@PathVariable("id") String id){
         Car car = carService.getCarById(id);
@@ -47,6 +53,12 @@ public class CarController {
         Car car = carService.patchCar(id, toUpdate);
         return car;
     }
-    //TODO: delete dupa ID, delete dupa o lista de iduri :') ,create de multiple
+
+    @DeleteMapping("/cars/{id}")
+    public void delCarById(@PathVariable("id") String id){
+        carService.delCarById(id);
+    }
+
+    //TODO: delete dupa ID, delete dupa o lista de iduri :')
     //TODO: endpoint prin care un get mai specific dupa oricare camp
 }
