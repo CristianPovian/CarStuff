@@ -26,6 +26,7 @@ public interface Repository {
             this.minValue=minValue;
             this.maxValue=maxValue;
         }
+
     }
 }
 
